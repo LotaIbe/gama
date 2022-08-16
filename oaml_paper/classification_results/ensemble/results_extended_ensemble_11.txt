@@ -1,0 +1,256 @@
+Initial model is PreviousImputer | RobustScaler | LeveragingBaggingClassifier(LogisticRegression) and hyperparameters are: {'PreviousImputer': {}, 'RobustScaler': {'with_centering': True, 'with_scaling': False, 'q_inf': 0.45, 'q_sup': 0.7500000000000002}, 'LeveragingBaggingClassifier': {'model': (<class 'river.linear_model.glm.LogisticRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Log'>, {'weight_pos': 1.0, 'weight_neg': 1.0}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'n_models': 15, 'w': 1, 'adwin_delta': 0.01, 'bagging_method': 'half', 'seed': None}}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with RMSE: 0
+Test batch - 6000 with Accuracy: 73.80%
+Test batch - 7500 with Accuracy: 77.36%
+Test batch - 9000 with Accuracy: 80.83%
+Test batch - 10500 with Accuracy: 82.78%
+Test batch - 12000 with Accuracy: 83.77%
+Test batch - 13500 with Accuracy: 84.29%
+Test batch - 15000 with Accuracy: 84.83%
+Test batch - 16500 with Accuracy: 85.13%
+Test batch - 18000 with Accuracy: 85.45%
+Test batch - 19500 with Accuracy: 85.66%
+Test batch - 21000 with Accuracy: 85.72%
+Test batch - 22500 with Accuracy: 85.97%
+Test batch - 24000 with Accuracy: 86.15%
+Test batch - 25500 with Accuracy: 86.24%
+Test batch - 27000 with Accuracy: 86.29%
+Test batch - 28500 with Accuracy: 86.34%
+Test batch - 30000 with Accuracy: 86.41%
+Test batch - 31500 with Accuracy: 86.53%
+Test batch - 33000 with Accuracy: 86.52%
+Test batch - 34500 with Accuracy: 86.57%
+Test batch - 36000 with Accuracy: 86.60%
+Test batch - 37500 with Accuracy: 86.70%
+Test batch - 39000 with Accuracy: 86.78%
+Test batch - 40500 with Accuracy: 86.81%
+Test batch - 42000 with Accuracy: 86.87%
+Test batch - 43500 with Accuracy: 86.89%
+Test batch - 45000 with Accuracy: 86.89%
+Test batch - 46500 with Accuracy: 86.88%
+Test batch - 48000 with Accuracy: 86.88%
+Test batch - 49500 with Accuracy: 86.91%
+Test batch - 51000 with Accuracy: 86.93%
+Test batch - 52500 with Accuracy: 86.96%
+Test batch - 54000 with Accuracy: 86.98%
+No drift but retraining point 55001 and current performance is at Accuracy: 86.98%
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingClassifier and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=False
+    q_inf=0.45
+    q_sup=0.75
+  ),
+  LeveragingBaggingClassifier (
+    model=LogisticRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Log (
+        weight_pos=1.
+        weight_neg=1.
+      )
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=15
+    w=1
+    adwin_delta=0.01
+    bagging_method="half"
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  StandardScaler (
+    with_std=True
+  ),
+  LeveragingBaggingClassifier (
+    model=LogisticRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Log (
+        weight_pos=1.
+        weight_neg=1.
+      )
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=5
+    w=8
+    adwin_delta=0.002
+    bagging_method="subag"
+    seed=None
+  )
+)], 'use_probabilities': True, 'dwm': False}
+Test batch - 55500 with Accuracy: 86.99%
+Test batch - 57000 with Accuracy: 87.03%
+Test batch - 58500 with Accuracy: 87.06%
+Test batch - 60000 with Accuracy: 87.06%
+Test batch - 61500 with Accuracy: 87.10%
+Test batch - 63000 with Accuracy: 87.13%
+Test batch - 64500 with Accuracy: 87.18%
+Test batch - 66000 with Accuracy: 87.18%
+Test batch - 67500 with Accuracy: 87.20%
+Test batch - 69000 with Accuracy: 87.26%
+Test batch - 70500 with Accuracy: 87.26%
+Test batch - 72000 with Accuracy: 87.29%
+Test batch - 73500 with Accuracy: 87.30%
+Test batch - 75000 with Accuracy: 87.31%
+Test batch - 76500 with Accuracy: 87.36%
+Test batch - 78000 with Accuracy: 87.43%
+Test batch - 79500 with Accuracy: 87.46%
+Test batch - 81000 with Accuracy: 87.46%
+Test batch - 82500 with Accuracy: 87.48%
+Test batch - 84000 with Accuracy: 87.50%
+Test batch - 85500 with Accuracy: 87.53%
+Test batch - 87000 with Accuracy: 87.56%
+Test batch - 88500 with Accuracy: 87.56%
+Test batch - 90000 with Accuracy: 87.56%
+Test batch - 91500 with Accuracy: 87.56%
+Test batch - 93000 with Accuracy: 87.60%
+Test batch - 94500 with Accuracy: 87.59%
+Test batch - 96000 with Accuracy: 87.58%
+Test batch - 97500 with Accuracy: 87.59%
+Test batch - 99000 with Accuracy: 87.61%
+Test batch - 100500 with Accuracy: 87.63%
+Test batch - 102000 with Accuracy: 87.66%
+Test batch - 103500 with Accuracy: 87.69%
+Test batch - 105000 with Accuracy: 87.69%
+No drift but retraining point 105002 and current performance is at Accuracy: 87.69%
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingClassifier and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=False
+    q_inf=0.45
+    q_sup=0.75
+  ),
+  LeveragingBaggingClassifier (
+    model=LogisticRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Log (
+        weight_pos=1.
+        weight_neg=1.
+      )
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=15
+    w=1
+    adwin_delta=0.01
+    bagging_method="half"
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  StandardScaler (
+    with_std=True
+  ),
+  LeveragingBaggingClassifier (
+    model=LogisticRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Log (
+        weight_pos=1.
+        weight_neg=1.
+      )
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=5
+    w=8
+    adwin_delta=0.002
+    bagging_method="subag"
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  HoeffdingAdaptiveTreeClassifier (
+    grace_period=209
+    max_depth=inf
+    split_criterion="gini"
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="nb"
+    nb_threshold=0
+    nominal_attributes=None
+    splitter=GaussianSplitter (
+      n_splits=10
+    )
+    bootstrap_sampling=True
+    drift_window_threshold=100
+    adwin_confidence=0.002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)], 'use_probabilities': True, 'dwm': False}
+Test batch - 106500 with Accuracy: 87.67%
+Test batch - 108000 with Accuracy: 87.67%
+Test batch - 109500 with Accuracy: 87.67%
+Test batch - 111000 with Accuracy: 87.65%
+Test batch - 112500 with Accuracy: 87.64%
+Test batch - 114000 with Accuracy: 87.65%
+Test batch - 115500 with Accuracy: 87.65%
+Test batch - 117000 with Accuracy: 87.67%
+Test batch - 118500 with Accuracy: 87.63%
+Test batch - 120000 with Accuracy: 87.63%
+Test batch - 121500 with Accuracy: 87.66%
+Test batch - 123000 with Accuracy: 87.66%
+Test batch - 124500 with Accuracy: 87.69%
+Test batch - 126000 with Accuracy: 87.66%
+Test batch - 127500 with Accuracy: 87.67%
+Test batch - 129000 with Accuracy: 87.67%
+Test batch - 130500 with Accuracy: 87.67%
+Test batch - 132000 with Accuracy: 87.67%
+Test batch - 133500 with Accuracy: 87.68%
+Test batch - 135000 with Accuracy: 87.70%
+Test batch - 136500 with Accuracy: 87.70%
+Test batch - 138000 with Accuracy: 87.71%
+Test batch - 139500 with Accuracy: 87.71%
+Test batch - 141000 with Accuracy: 87.72%
+Test batch - 142500 with Accuracy: 87.73%
+Test batch - 144000 with Accuracy: 87.74%
+Test batch - 145500 with Accuracy: 87.74%
+Test batch - 147000 with Accuracy: 87.76%
+Test batch - 148500 with Accuracy: 87.75%

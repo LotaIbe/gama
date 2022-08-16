@@ -1,0 +1,5259 @@
+Initial model is PreviousImputer | RobustScaler | BaggingRegressor(LinearRegression) and hyperparameters are: {'PreviousImputer': {}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'n_models': 11, 'seed': None}}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with RMSE: 0
+Test batch - 567 with RMSE: 0.178446
+Test batch - 648 with RMSE: 0.148496
+Test batch - 729 with RMSE: 0.134209
+Test batch - 810 with RMSE: 0.124612
+Test batch - 891 with RMSE: 0.116557
+No drift but retraining point 901 and current performance is at RMSE: 0.115247
+Online model is updated with latest AutoML pipeline.
+Current model is PreviousImputer | Normalizer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'Normalizer': {'order': 2}, 'AdaptiveRandomForestRegressor': {'n_models': 17, 'max_features': 3, 'aggregation_method': 'mean', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 202, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.02, 'leaf_prediction': 'model', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 972 with RMSE: 0.111197
+Test batch - 1053 with RMSE: 0.107969
+Test batch - 1134 with RMSE: 0.1099
+Test batch - 1215 with RMSE: 0.107906
+Test batch - 1296 with RMSE: 0.104928
+No drift but retraining point 1302 and current performance is at RMSE: 0.105166
+Online model is updated with latest AutoML pipeline.
+Current model is PreviousImputer | Normalizer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'Normalizer': {'order': 2}, 'AdaptiveRandomForestRegressor': {'n_models': 31, 'max_features': 6, 'aggregation_method': 'mean', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 137, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.06999999999999999, 'leaf_prediction': 'adaptive', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 1377 with RMSE: 0.105081
+Test batch - 1458 with RMSE: 0.104056
+Test batch - 1539 with RMSE: 0.104405
+Test batch - 1620 with RMSE: 0.103181
+Test batch - 1701 with RMSE: 0.101493
+No drift but retraining point 1703 and current performance is at RMSE: 0.101413
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 1782 with RMSE: 0.100545
+Test batch - 1863 with RMSE: 0.099608
+Test batch - 1944 with RMSE: 0.099227
+Test batch - 2025 with RMSE: 0.098416
+No drift but retraining point 2104 and current performance is at RMSE: 0.097765
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 2106 with RMSE: 0.097737
+Test batch - 2187 with RMSE: 0.097309
+Test batch - 2268 with RMSE: 0.0967
+Test batch - 2349 with RMSE: 0.096425
+Test batch - 2430 with RMSE: 0.095953
+No drift but retraining point 2505 and current performance is at RMSE: 0.095897
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 2511 with RMSE: 0.095809
+Test batch - 2592 with RMSE: 0.096253
+Test batch - 2673 with RMSE: 0.095679
+Test batch - 2754 with RMSE: 0.095077
+Test batch - 2835 with RMSE: 0.094768
+No drift but retraining point 2906 and current performance is at RMSE: 0.094498
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 2916 with RMSE: 0.094503
+Test batch - 2997 with RMSE: 0.094121
+Test batch - 3078 with RMSE: 0.094158
+Test batch - 3159 with RMSE: 0.093882
+Test batch - 3240 with RMSE: 0.093909
+No drift but retraining point 3307 and current performance is at RMSE: 0.093355
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 3321 with RMSE: 0.093324
+Test batch - 3402 with RMSE: 0.092863
+Test batch - 3483 with RMSE: 0.092637
+Test batch - 3564 with RMSE: 0.092396
+Test batch - 3645 with RMSE: 0.092328
+No drift but retraining point 3708 and current performance is at RMSE: 0.092037
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+)]}
+Test batch - 3726 with RMSE: 0.091919
+Test batch - 3807 with RMSE: 0.092208
+Test batch - 3888 with RMSE: 0.091922
+Test batch - 3969 with RMSE: 0.091482
+Test batch - 4050 with RMSE: 0.091772
+No drift but retraining point 4109 and current performance is at RMSE: 0.091678
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=11
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=17
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=202
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="model"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 4131 with RMSE: 0.091725
+Test batch - 4212 with RMSE: 0.091797
+Test batch - 4293 with RMSE: 0.091572
+Test batch - 4374 with RMSE: 0.091636
+Test batch - 4455 with RMSE: 0.091784
+No drift but retraining point 4510 and current performance is at RMSE: 0.091593
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 4536 with RMSE: 0.091649
+Test batch - 4617 with RMSE: 0.091788
+Test batch - 4698 with RMSE: 0.091756
+Test batch - 4779 with RMSE: 0.091915
+Test batch - 4860 with RMSE: 0.091871
+No drift but retraining point 4911 and current performance is at RMSE: 0.091837
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=31
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=137
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=74
+    max_depth=inf
+    split_confidence=0.0001
+    tie_threshold=0.04
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=5
+    bootstrap_sampling=False
+    drift_window_threshold=200
+    adwin_confidence=0.02
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 4941 with RMSE: 0.091767
+Test batch - 5022 with RMSE: 0.092204
+Test batch - 5103 with RMSE: 0.091889
+Test batch - 5184 with RMSE: 0.091687
+Test batch - 5265 with RMSE: 0.091462
+No drift but retraining point 5312 and current performance is at RMSE: 0.091347
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=266
+    max_depth=inf
+    split_confidence=1e-09
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=7
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=74
+    max_depth=inf
+    split_confidence=0.0001
+    tie_threshold=0.04
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=5
+    bootstrap_sampling=False
+    drift_window_threshold=200
+    adwin_confidence=0.02
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 5346 with RMSE: 0.091287
+Test batch - 5427 with RMSE: 0.091313
+Test batch - 5508 with RMSE: 0.091609
+Test batch - 5589 with RMSE: 0.091364
+Test batch - 5670 with RMSE: 0.091609
+No drift but retraining point 5713 and current performance is at RMSE: 0.091787
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=74
+    max_depth=inf
+    split_confidence=0.0001
+    tie_threshold=0.04
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=5
+    bootstrap_sampling=False
+    drift_window_threshold=200
+    adwin_confidence=0.02
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+)]}
+Test batch - 5751 with RMSE: 0.091667
+Test batch - 5832 with RMSE: 0.091957
+Test batch - 5913 with RMSE: 0.091902
+Test batch - 5994 with RMSE: 0.092378
+Test batch - 6075 with RMSE: 0.092149
+No drift but retraining point 6114 and current performance is at RMSE: 0.092311
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=33
+    max_features=6
+    aggregation_method="median"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=170
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=74
+    max_depth=inf
+    split_confidence=0.0001
+    tie_threshold=0.04
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=5
+    bootstrap_sampling=False
+    drift_window_threshold=200
+    adwin_confidence=0.02
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveStandardScaler (
+    alpha=0.7
+  ),
+  Binarizer (
+    threshold=0.35
+    dtype=<class 'bool'>
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=2
+    seed=None
+  )
+)]}
+Test batch - 6156 with RMSE: 0.092579
+Test batch - 6237 with RMSE: 0.093046
+Test batch - 6318 with RMSE: 0.093341
+Test batch - 6399 with RMSE: 0.093364
+Test batch - 6480 with RMSE: 0.094387
+No drift but retraining point 6515 and current performance is at RMSE: 0.094647
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveStandardScaler (
+    alpha=0.7
+  ),
+  Binarizer (
+    threshold=0.35
+    dtype=<class 'bool'>
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=2
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+)]}
+Test batch - 6561 with RMSE: 0.094482
+Test batch - 6642 with RMSE: 0.094815
+Test batch - 6723 with RMSE: 0.094685
+Test batch - 6804 with RMSE: 0.094636
+Test batch - 6885 with RMSE: 0.095164
+No drift but retraining point 6916 and current performance is at RMSE: 0.095111
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Binarizer (
+    threshold=1.
+    dtype=<class 'bool'>
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=36
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=23
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=72
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveStandardScaler (
+    alpha=0.7
+  ),
+  Binarizer (
+    threshold=0.35
+    dtype=<class 'bool'>
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=2
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+)]}
+Test batch - 6966 with RMSE: 0.095262
+Test batch - 7047 with RMSE: 0.095307
+Test batch - 7128 with RMSE: 0.095044
+Test batch - 7209 with RMSE: 0.094907
+Test batch - 7290 with RMSE: 0.095034
+No drift but retraining point 7317 and current performance is at RMSE: 0.095042
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveStandardScaler (
+    alpha=0.7
+  ),
+  Binarizer (
+    threshold=0.35
+    dtype=<class 'bool'>
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=2
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+)]}
+Test batch - 7371 with RMSE: 0.094919
+Test batch - 7452 with RMSE: 0.094727
+Test batch - 7533 with RMSE: 0.094997
+Test batch - 7614 with RMSE: 0.094876
+Test batch - 7695 with RMSE: 0.094811
+No drift but retraining point 7718 and current performance is at RMSE: 0.094723
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=335
+    max_depth=inf
+    split_confidence=0.01
+    tie_threshold=0.05
+    leaf_prediction="model"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=3
+    bootstrap_sampling=False
+    drift_window_threshold=300
+    adwin_confidence=0.0002
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveStandardScaler (
+    alpha=0.7
+  ),
+  Binarizer (
+    threshold=0.35
+    dtype=<class 'bool'>
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=2
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=39
+    max_features=16
+    aggregation_method="median"
+    lambda_value=7
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=121
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 7776 with RMSE: 0.094827
+Test batch - 7857 with RMSE: 0.094632
+Test batch - 7938 with RMSE: 0.094493
+Test batch - 8019 with RMSE: 0.094231
+Test batch - 8100 with RMSE: 0.094191
+No drift but retraining point 8119 and current performance is at RMSE: 0.094208
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=19
+    max_features=5
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=76
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=1
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=27
+    max_features=32
+    aggregation_method="mean"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=327
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=3
+    aggregation_method="mean"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=210
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.02
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  Normalizer (
+    order=2
+  ),
+  StandardScaler (
+    with_std=True
+  ),
+  BaggingRegressor (
+    model=HoeffdingTreeRegressor (
+      grace_period=200
+      max_depth=inf
+      split_confidence=1e-07
+      tie_threshold=0.05
+      leaf_prediction="model"
+      leaf_model=LinearRegression (
+        optimizer=SGD (
+          lr=Constant (
+            learning_rate=0.01
+          )
+        )
+        loss=Squared ()
+        l2=0.
+        intercept_init=0.
+        intercept_lr=Constant (
+          learning_rate=0.01
+        )
+        clip_gradient=1e+12
+        initializer=Zeros ()
+      )
+      model_selector_decay=0.95
+      nominal_attributes=None
+      splitter=EBSTSplitter ()
+      min_samples_split=5
+      binary_split=False
+      max_size=500
+      memory_estimate_period=1000000
+      stop_mem_management=False
+      remove_poor_attrs=False
+      merit_preprune=True
+    )
+    n_models=5
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveStandardScaler (
+    alpha=0.7
+  ),
+  Binarizer (
+    threshold=0.35
+    dtype=<class 'bool'>
+  ),
+  BaggingRegressor (
+    model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    n_models=2
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=1e-07
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  MinMaxScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  LinearRegression (
+    optimizer=SGD (
+      lr=Constant (
+        learning_rate=0.01
+      )
+    )
+    loss=Squared ()
+    l2=0
+    intercept_init=0.
+    intercept_lr=Constant (
+      learning_rate=0.01
+    )
+    clip_gradient=1e+12
+    initializer=Zeros ()
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=39
+    max_features=16
+    aggregation_method="median"
+    lambda_value=7
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=121
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 8181 with RMSE: 0.094381

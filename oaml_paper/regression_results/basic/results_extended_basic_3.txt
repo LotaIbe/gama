@@ -1,0 +1,155 @@
+Initial model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with RMSE: 0
+Test batch - 567 with RMSE: 0.126638
+Test batch - 648 with RMSE: 0.12095
+Test batch - 729 with RMSE: 0.117832
+Test batch - 810 with RMSE: 0.113314
+Test batch - 891 with RMSE: 0.109016
+No drift but retraining point 901 and current performance is at RMSE: 0.10795
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 972 with RMSE: 0.105842
+Test batch - 1053 with RMSE: 0.105017
+Test batch - 1134 with RMSE: 0.108973
+Test batch - 1215 with RMSE: 0.108809
+Test batch - 1296 with RMSE: 0.107324
+No drift but retraining point 1302 and current performance is at RMSE: 0.107341
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 1377 with RMSE: 0.107843
+Test batch - 1458 with RMSE: 0.1074
+Test batch - 1539 with RMSE: 0.107452
+Test batch - 1620 with RMSE: 0.107143
+Test batch - 1701 with RMSE: 0.106057
+No drift but retraining point 1703 and current performance is at RMSE: 0.105986
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 1782 with RMSE: 0.105675
+Test batch - 1863 with RMSE: 0.105168
+Test batch - 1944 with RMSE: 0.104556
+Test batch - 2025 with RMSE: 0.104074
+No drift but retraining point 2104 and current performance is at RMSE: 0.103855
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 2106 with RMSE: 0.103803
+Test batch - 2187 with RMSE: 0.103398
+Test batch - 2268 with RMSE: 0.103214
+Test batch - 2349 with RMSE: 0.103529
+Test batch - 2430 with RMSE: 0.10332
+No drift but retraining point 2505 and current performance is at RMSE: 0.104347
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 2511 with RMSE: 0.104294
+Test batch - 2592 with RMSE: 0.104884
+Test batch - 2673 with RMSE: 0.104599
+Test batch - 2754 with RMSE: 0.104439
+Test batch - 2835 with RMSE: 0.104742
+No drift but retraining point 2906 and current performance is at RMSE: 0.104647
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 2916 with RMSE: 0.104713
+Test batch - 2997 with RMSE: 0.104901
+Test batch - 3078 with RMSE: 0.105133
+Test batch - 3159 with RMSE: 0.105057
+Test batch - 3240 with RMSE: 0.105124
+No drift but retraining point 3307 and current performance is at RMSE: 0.104882
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 3321 with RMSE: 0.104879
+Test batch - 3402 with RMSE: 0.104404
+Test batch - 3483 with RMSE: 0.104449
+Test batch - 3564 with RMSE: 0.104553
+Test batch - 3645 with RMSE: 0.104757
+No drift but retraining point 3708 and current performance is at RMSE: 0.104541
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 3726 with RMSE: 0.104453
+Test batch - 3807 with RMSE: 0.105189
+Test batch - 3888 with RMSE: 0.105214
+Test batch - 3969 with RMSE: 0.104659
+Test batch - 4050 with RMSE: 0.105312
+No drift but retraining point 4109 and current performance is at RMSE: 0.105423
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 4131 with RMSE: 0.105541
+Test batch - 4212 with RMSE: 0.105786
+Test batch - 4293 with RMSE: 0.10567
+Test batch - 4374 with RMSE: 0.106226
+Test batch - 4455 with RMSE: 0.106464
+No drift but retraining point 4510 and current performance is at RMSE: 0.106256
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 4536 with RMSE: 0.106385
+Test batch - 4617 with RMSE: 0.106653
+Test batch - 4698 with RMSE: 0.106557
+Test batch - 4779 with RMSE: 0.106564
+Test batch - 4860 with RMSE: 0.10646
+No drift but retraining point 4911 and current performance is at RMSE: 0.106476
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 4941 with RMSE: 0.106419
+Test batch - 5022 with RMSE: 0.10677
+Test batch - 5103 with RMSE: 0.106421
+Test batch - 5184 with RMSE: 0.106317
+Test batch - 5265 with RMSE: 0.106114
+No drift but retraining point 5312 and current performance is at RMSE: 0.105935
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 5346 with RMSE: 0.105821
+Test batch - 5427 with RMSE: 0.105751
+Test batch - 5508 with RMSE: 0.10587
+Test batch - 5589 with RMSE: 0.105492
+Test batch - 5670 with RMSE: 0.105715
+No drift but retraining point 5713 and current performance is at RMSE: 0.105822
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 5751 with RMSE: 0.105741
+Test batch - 5832 with RMSE: 0.105935
+Test batch - 5913 with RMSE: 0.105848
+Test batch - 5994 with RMSE: 0.105973
+Test batch - 6075 with RMSE: 0.105798
+No drift but retraining point 6114 and current performance is at RMSE: 0.105974
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 6156 with RMSE: 0.106181
+Test batch - 6237 with RMSE: 0.106509
+Test batch - 6318 with RMSE: 0.106746
+Test batch - 6399 with RMSE: 0.106907
+Test batch - 6480 with RMSE: 0.107719
+No drift but retraining point 6515 and current performance is at RMSE: 0.107883
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 6561 with RMSE: 0.107839
+Test batch - 6642 with RMSE: 0.107891
+Test batch - 6723 with RMSE: 0.107736
+Test batch - 6804 with RMSE: 0.10759
+Test batch - 6885 with RMSE: 0.107828
+No drift but retraining point 6916 and current performance is at RMSE: 0.107782
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 6966 with RMSE: 0.1079
+Test batch - 7047 with RMSE: 0.108082
+Test batch - 7128 with RMSE: 0.107787
+Test batch - 7209 with RMSE: 0.107624
+Test batch - 7290 with RMSE: 0.107633
+No drift but retraining point 7317 and current performance is at RMSE: 0.107617
+Online model is kept at current AutoML pipeline.
+Current model is Normalizer | AdaptiveStandardScaler | LinearRegression and hyperparameters are: {'Normalizer': {'order': 1}, 'AdaptiveStandardScaler': {'alpha': 0.5}, 'LinearRegression': {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}}
+Test batch - 7371 with RMSE: 0.107512
+Test batch - 7452 with RMSE: 0.107449
+Test batch - 7533 with RMSE: 0.107718
+Test batch - 7614 with RMSE: 0.107727
+Test batch - 7695 with RMSE: 0.107753
+No drift but retraining point 7718 and current performance is at RMSE: 0.107714
+Online model is updated with latest AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 35, 'max_features': 32, 'aggregation_method': 'median', 'lambda_value': 5, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 70, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.06999999999999999, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 7776 with RMSE: 0.107955
+Test batch - 7857 with RMSE: 0.107731
+Test batch - 7938 with RMSE: 0.107526
+Test batch - 8019 with RMSE: 0.107267
+Test batch - 8100 with RMSE: 0.107314
+No drift but retraining point 8119 and current performance is at RMSE: 0.107438
+Online model is kept at current AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 35, 'max_features': 32, 'aggregation_method': 'median', 'lambda_value': 5, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 70, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.06999999999999999, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 8181 with RMSE: 0.107589

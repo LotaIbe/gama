@@ -1,0 +1,824 @@
+(oaml-dev) ➜  gama git:(oaml) ✗ python OAML_DWM_ensemble.py 'data_streams/catalyst_activation.arff' 500 300 rmse rmse 90 evol True
+OAML_DWM_ensemble.py
+Data stream is data_streams/catalyst_activation.arff.
+Initial batch size is 500.
+Sliding window size is 300.
+Gama performance metric is neg_root_mean_squared_error.
+Online performance metric is RMSE: 0..
+Time budget for GAMA is 90.
+Search algorithm for GAMA is AsyncEA().
+Live plotting (wandb) is True.
+wandb: Tracking run with wandb version 0.9.7
+wandb: Wandb version 0.12.16 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Run data is saved locally in wandb/run-20220508_012805-3drh4p4t
+wandb: Syncing run Extended OAML - Ensemble (AddExp)
+wandb: ⭐️ View project at https://app.wandb.ai/lota/Results
+wandb: 🚀 View run at https://app.wandb.ai/lota/Results/runs/3drh4p4t
+wandb: Run `wandb off` to turn off syncing.
+
+Initial model is PreviousImputer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'AdaptiveRandomForestRegressor': {'n_models': 37, 'max_features': 12, 'aggregation_method': 'median', 'lambda_value': 3, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 68, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.049999999999999996, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with RMSE: 0
+Test batch - 522 with RMSE: 0.008965
+Test batch - 580 with RMSE: 0.012461
+Test batch - 638 with RMSE: 0.027522
+Test batch - 696 with RMSE: 0.063517
+Test batch - 754 with RMSE: 0.067672
+Test batch - 812 with RMSE: 0.066156
+Test batch - 870 with RMSE: 0.062297
+Test batch - 928 with RMSE: 0.058479
+Test batch - 986 with RMSE: 0.054983
+Test batch - 1044 with RMSE: 0.052209
+Test batch - 1102 with RMSE: 0.050043
+Test batch - 1160 with RMSE: 0.048116
+Batch Performance on Ensemble: RMSE: 0.015012
+Batch Performance on current model: RMSE: 0.021659
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=37
+    max_features=12
+    aggregation_method="median"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=68
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=21
+    max_features=12
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=175
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 1218 with RMSE: 0.046514
+Test batch - 1276 with RMSE: 0.044864
+Test batch - 1334 with RMSE: 0.043323
+Test batch - 1392 with RMSE: 0.041913
+Test batch - 1450 with RMSE: 0.040687
+Test batch - 1508 with RMSE: 0.039562
+Test batch - 1566 with RMSE: 0.038531
+Test batch - 1624 with RMSE: 0.037539
+Test batch - 1682 with RMSE: 0.036618
+Test batch - 1740 with RMSE: 0.035865
+Test batch - 1798 with RMSE: 0.035224
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Batch Performance on Ensemble: RMSE: 0.030093
+Batch Performance on current model: RMSE: 0.034331
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=37
+    max_features=12
+    aggregation_method="median"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=68
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=21
+    max_features=12
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=175
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=18
+    max_features=12
+    aggregation_method="mean"
+    lambda_value=7
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=100
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 1856 with RMSE: 0.034756
+Test batch - 1914 with RMSE: 0.034047
+Test batch - 1972 with RMSE: 0.033377
+Test batch - 2030 with RMSE: 0.032756
+Test batch - 2088 with RMSE: 0.032205
+Test batch - 2146 with RMSE: 0.031684
+Test batch - 2204 with RMSE: 0.031181
+Test batch - 2262 with RMSE: 0.030783
+Test batch - 2320 with RMSE: 0.030529
+Test batch - 2378 with RMSE: 0.03118
+Test batch - 2436 with RMSE: 0.031341
+Test batch - 2494 with RMSE: 0.031037
+Batch Performance on Ensemble: RMSE: 0.049551
+Batch Performance on current model: RMSE: 0.051397
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=37
+    max_features=12
+    aggregation_method="median"
+    lambda_value=3
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=68
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.05
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=21
+    max_features=12
+    aggregation_method="mean"
+    lambda_value=8
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=175
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=18
+    max_features=12
+    aggregation_method="mean"
+    lambda_value=7
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=100
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.03
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=34
+    max_features=8
+    aggregation_method="median"
+    lambda_value=5
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=102
+    max_depth=None
+    split_confidence=1e-05
+    tie_threshold=0.06
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 2552 with RMSE: 0.030643
+Test batch - 2610 with RMSE: 0.030224
+Test batch - 2668 with RMSE: 0.029821
+Test batch - 2726 with RMSE: 0.029433
+Test batch - 2784 with RMSE: 0.029059
+Test batch - 2842 with RMSE: 0.028698
+Test batch - 2900 with RMSE: 0.028352
+Test batch - 2958 with RMSE: 0.028018
+Test batch - 3016 with RMSE: 0.027695
+Test batch - 3074 with RMSE: 0.027388
+Test batch - 3132 with RMSE: 0.027101
+Test batch - 3190 with RMSE: 0.026819
+Test batch - 3248 with RMSE: 0.026543
+Test batch - 3306 with RMSE: 0.026273
+Test batch - 3364 with RMSE: 0.026031
+Test batch - 3422 with RMSE: 0.025872
+Test batch - 3480 with RMSE: 0.025653
+Error raised during evaluation: `timeout` must be greater than 0, is -0.015642881393432617..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.01680469512939453..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.017166852951049805..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.017548799514770508..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.017955780029296875..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.018338680267333984..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.01864767074584961..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.01902174949645996..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.01929759979248047..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.019711971282958984..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.0200498104095459..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.020429611206054688..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.020584821701049805..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.020964860916137695..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.02126479148864746..
+Error raised during evaluation: `timeout` must be greater than 0, is -0.02122974395751953..
+Batch Performance on Ensemble: RMSE: 0.016255
+Batch Performance on current model: RMSE: 0.015915
+Online model is updated with latest AutoML pipeline.
+Current model is PreviousImputer | Normalizer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'Normalizer': {'order': 2}, 'AdaptiveRandomForestRegressor': {'n_models': 34, 'max_features': 2, 'aggregation_method': 'median', 'lambda_value': 7, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 123, 'max_depth': None, 'split_confidence': 1e-09, 'tie_threshold': 0.049999999999999996, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.2, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 3538 with RMSE: 0.025541
+Test batch - 3596 with RMSE: 0.025671
+Test batch - 3654 with RMSE: 0.025822
+Test batch - 3712 with RMSE: 0.025764
+Test batch - 3770 with RMSE: 0.025593
+Test batch - 3828 with RMSE: 0.025383
+Test batch - 3886 with RMSE: 0.025171
+Test batch - 3944 with RMSE: 0.02497
+Test batch - 4002 with RMSE: 0.024793
+Test batch - 4060 with RMSE: 0.024619
+Test batch - 4118 with RMSE: 0.024434
+Test batch - 4176 with RMSE: 0.024244
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/queues.py", line 251, in _feed
+    send_bytes(obj)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 205, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 416, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 373, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+Batch Performance on Ensemble: RMSE: 0.023003
+Batch Performance on current model: RMSE: 0.016662
+Online model is updated with latest AutoML pipeline.
+Current model is PreviousImputer | AdaptiveStandardScaler | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'AdaptiveStandardScaler': {'alpha': 0.3}, 'AdaptiveRandomForestRegressor': {'n_models': 27, 'max_features': 8, 'aggregation_method': 'mean', 'lambda_value': 7, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 224, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.06, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 4234 with RMSE: 0.024056
+Test batch - 4292 with RMSE: 0.023872
+Test batch - 4350 with RMSE: 0.023692
+Test batch - 4408 with RMSE: 0.023516
+Test batch - 4466 with RMSE: 0.023344
+Test batch - 4524 with RMSE: 0.023176
+Test batch - 4582 with RMSE: 0.023012
+Test batch - 4640 with RMSE: 0.02285
+Test batch - 4698 with RMSE: 0.022693
+Test batch - 4756 with RMSE: 0.022555
+Batch Performance on Ensemble: RMSE: 0.004461
+Batch Performance on current model: RMSE: 0.004229
+Online model is updated with latest AutoML pipeline.
+Current model is PreviousImputer | Normalizer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'Normalizer': {'order': 2}, 'AdaptiveRandomForestRegressor': {'n_models': 22, 'max_features': 1, 'aggregation_method': 'median', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 287, 'max_depth': None, 'split_confidence': 1e-09, 'tie_threshold': 0.06, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 4814 with RMSE: 0.02248
+Test batch - 4872 with RMSE: 0.022342
+Test batch - 4930 with RMSE: 0.022198
+Test batch - 4988 with RMSE: 0.022055
+Test batch - 5046 with RMSE: 0.021915
+Test batch - 5104 with RMSE: 0.021778
+Test batch - 5162 with RMSE: 0.021644
+Test batch - 5220 with RMSE: 0.021533
+Test batch - 5278 with RMSE: 0.021416
+Test batch - 5336 with RMSE: 0.021313
+Test batch - 5394 with RMSE: 0.02129
+Test batch - 5452 with RMSE: 0.021279
+Test batch - 5510 with RMSE: 0.021167
+Test batch - 5568 with RMSE: 0.021061
+Test batch - 5626 with RMSE: 0.020958
+Test batch - 5684 with RMSE: 0.020844
+Test batch - 5742 with RMSE: 0.020734
+Test batch - 5800 with RMSE: 0.020646
+Test batch - 5858 with RMSE: 0.023077
+
+wandb: Waiting for W&B process to finish, PID 67708
+wandb: Program ended successfully.
+wandb: Run summary:
+wandb:   Prequential performance 0.02307736546000568
+wandb:                _timestamp 1651970725.77735
+wandb:                     _step 99
+wandb:                  _runtime 1040.753184080124
+wandb:             current_point 5858
+wandb:              model_update 1
+wandb: Syncing 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb:                                                                                
+wandb: Synced Extended OAML - Ensemble (AddExp): https://app.wandb.ai/lota/Results/runs/3drh4p4t
+(oaml-dev) ➜  gama git:(oaml) ✗ 

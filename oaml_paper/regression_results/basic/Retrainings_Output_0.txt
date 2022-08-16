@@ -1,0 +1,3 @@
+No drift but retraining point 1603 and current performance is at RMSE: 0.031178
+No drift but retraining point 3132 and current performance is at RMSE: 0.02458
+No drift but retraining point 5522 and current performance is at RMSE: 0.019484

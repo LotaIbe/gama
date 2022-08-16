@@ -1,0 +1,125 @@
+Initial model is StandardScaler | AdaptiveRandomForestRegressor and hyperparameters are: {'StandardScaler': {'with_std': True}, 'AdaptiveRandomForestRegressor': {'n_models': 16, 'max_features': 2, 'aggregation_method': 'mean', 'lambda_value': 6, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 333, 'max_depth': None, 'split_confidence': 1e-09, 'tie_threshold': 0.03, 'leaf_prediction': 'adaptive', 'leaf_model': None, 'model_selector_decay': 0.2, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with RMSE: 0
+Test batch - 550 with RMSE: 10.607036
+Test batch - 600 with RMSE: 10.546658
+Test batch - 650 with RMSE: 10.663496
+Test batch - 700 with RMSE: 10.946285
+Test batch - 750 with RMSE: 10.961286
+Test batch - 800 with RMSE: 11.015506
+Test batch - 850 with RMSE: 11.021202
+Test batch - 900 with RMSE: 11.080562
+No drift but retraining point 901 and current performance is at RMSE: 11.079543
+Online model is updated with latest AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 950 with RMSE: 11.113443
+Test batch - 1000 with RMSE: 11.09356
+Test batch - 1050 with RMSE: 11.148883
+Test batch - 1100 with RMSE: 11.079749
+Test batch - 1150 with RMSE: 11.059911
+Test batch - 1200 with RMSE: 10.950944
+Test batch - 1250 with RMSE: 11.00601
+Test batch - 1300 with RMSE: 10.877805
+No drift but retraining point 1302 and current performance is at RMSE: 10.879204
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 1350 with RMSE: 10.865309
+Test batch - 1400 with RMSE: 10.894133
+Test batch - 1450 with RMSE: 10.815743
+Test batch - 1500 with RMSE: 10.746289
+Test batch - 1550 with RMSE: 10.630801
+Test batch - 1600 with RMSE: 10.668756
+Test batch - 1650 with RMSE: 10.732998
+Test batch - 1700 with RMSE: 10.750225
+No drift but retraining point 1703 and current performance is at RMSE: 10.755253
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 1750 with RMSE: 10.700504
+Test batch - 1800 with RMSE: 10.66179
+Test batch - 1850 with RMSE: 10.67592
+Test batch - 1900 with RMSE: 10.647603
+Test batch - 1950 with RMSE: 10.647958
+Test batch - 2000 with RMSE: 10.591816
+Test batch - 2050 with RMSE: 10.580937
+Test batch - 2100 with RMSE: 10.571989
+No drift but retraining point 2104 and current performance is at RMSE: 10.569434
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 2150 with RMSE: 10.526931
+Test batch - 2200 with RMSE: 10.512154
+Test batch - 2250 with RMSE: 10.523226
+Test batch - 2300 with RMSE: 10.486975
+Test batch - 2350 with RMSE: 10.521154
+Test batch - 2400 with RMSE: 10.532441
+Test batch - 2450 with RMSE: 10.497273
+Test batch - 2500 with RMSE: 10.472062
+No drift but retraining point 2505 and current performance is at RMSE: 10.467603
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 2550 with RMSE: 10.440321
+Test batch - 2600 with RMSE: 10.460318
+Test batch - 2650 with RMSE: 10.466326
+Test batch - 2700 with RMSE: 10.442338
+Test batch - 2750 with RMSE: 10.386746
+Test batch - 2800 with RMSE: 10.376047
+Test batch - 2850 with RMSE: 10.353274
+Test batch - 2900 with RMSE: 10.367015
+No drift but retraining point 2906 and current performance is at RMSE: 10.361191
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 2950 with RMSE: 10.370746
+Test batch - 3000 with RMSE: 10.348215
+Test batch - 3050 with RMSE: 10.34931
+Test batch - 3100 with RMSE: 10.332878
+Test batch - 3150 with RMSE: 10.330301
+Test batch - 3200 with RMSE: 10.307651
+Test batch - 3250 with RMSE: 10.299325
+Test batch - 3300 with RMSE: 10.320162
+No drift but retraining point 3307 and current performance is at RMSE: 10.32701
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 3350 with RMSE: 10.315631
+Test batch - 3400 with RMSE: 10.302668
+Test batch - 3450 with RMSE: 10.301961
+Test batch - 3500 with RMSE: 10.315305
+Test batch - 3550 with RMSE: 10.341283
+Test batch - 3600 with RMSE: 10.342895
+Test batch - 3650 with RMSE: 10.358288
+Test batch - 3700 with RMSE: 10.33545
+No drift but retraining point 3708 and current performance is at RMSE: 10.33175
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 3750 with RMSE: 10.346368
+Test batch - 3800 with RMSE: 10.310393
+Test batch - 3850 with RMSE: 10.314566
+Test batch - 3900 with RMSE: 10.303671
+Test batch - 3950 with RMSE: 10.282106
+Test batch - 4000 with RMSE: 10.275701
+Test batch - 4050 with RMSE: 10.264358
+Test batch - 4100 with RMSE: 10.265863
+No drift but retraining point 4109 and current performance is at RMSE: 10.261309
+Online model is kept at current AutoML pipeline.
+Current model is Binarizer | RobustScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'Binarizer': {'threshold': 0.45, 'dtype': <class 'bool'>}, 'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 2, 'seed': None}}
+Test batch - 4150 with RMSE: 10.268428
+Test batch - 4200 with RMSE: 10.25707
+Test batch - 4250 with RMSE: 10.267942
+Test batch - 4300 with RMSE: 10.267713
+Test batch - 4350 with RMSE: 10.245969
+Test batch - 4400 with RMSE: 10.255389
+Test batch - 4450 with RMSE: 10.24299
+Test batch - 4500 with RMSE: 10.242306
+No drift but retraining point 4510 and current performance is at RMSE: 10.239228
+Online model is updated with latest AutoML pipeline.
+Current model is AdaptiveStandardScaler | BaggingRegressor(HoeffdingTreeRegressor) and hyperparameters are: {'AdaptiveStandardScaler': {'alpha': 0.7000000000000002}, 'BaggingRegressor': {'model': (<class 'river.tree.hoeffding_tree_regressor.HoeffdingTreeRegressor'>, {'grace_period': 200, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.05, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.95, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True}), 'n_models': 1, 'seed': None}}
+Test batch - 4550 with RMSE: 10.234195
+Test batch - 4600 with RMSE: 10.22411
+Test batch - 4650 with RMSE: 10.221652
+Test batch - 4700 with RMSE: 10.200975
+Test batch - 4750 with RMSE: 10.205321
+Test batch - 4800 with RMSE: 10.201227
+Test batch - 4850 with RMSE: 10.192209
+Test batch - 4900 with RMSE: 10.199994
+No drift but retraining point 4911 and current performance is at RMSE: 10.202558
+Online model is updated with latest AutoML pipeline.
+Current model is RobustScaler | HoeffdingAdaptiveTreeRegressor and hyperparameters are: {'RobustScaler': {'with_centering': True, 'with_scaling': True, 'q_inf': 0.25, 'q_sup': 0.75}, 'HoeffdingAdaptiveTreeRegressor': {'grace_period': 244, 'max_depth': inf, 'split_confidence': 1e-07, 'tie_threshold': 0.049999999999999996, 'leaf_prediction': 'model', 'leaf_model': (<class 'river.linear_model.glm.LinearRegression'>, {'optimizer': (<class 'river.optim.sgd.SGD'>, {'lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01})}), 'loss': (<class 'river.optim.losses.Squared'>, {}), 'l2': 0.0, 'intercept_init': 0.0, 'intercept_lr': (<class 'river.optim.schedulers.Constant'>, {'learning_rate': 0.01}), 'clip_gradient': 1000000000000.0, 'initializer': (<class 'river.optim.initializers.Zeros'>, {})}), 'model_selector_decay': 0.2, 'nominal_attributes': None, 'splitter': (<class 'river.tree.splitter.ebst_splitter.EBSTSplitter'>, {}), 'min_samples_split': 7, 'bootstrap_sampling': True, 'drift_window_threshold': 100, 'adwin_confidence': 0.02, 'binary_split': False, 'max_size': 100, 'memory_estimate_period': 1000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 4950 with RMSE: 10.204107

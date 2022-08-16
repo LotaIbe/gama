@@ -25,7 +25,7 @@ from river.metrics import F1
 # from river.metrics import LogLoss
 # from river.metrics import MAE
 # from river.metrics import MCC
-# from river.metrics import MSE
+from river.metrics import MSE
 # from river.metrics import MacroF1
 # from river.metrics import MacroFBeta
 # from river.metrics import MacroPrecision
@@ -80,5 +80,7 @@ def get_metric(metric):
         return ROCAUC()
     elif metric == 'rmse':
         return RMSE()
+    elif metric == 'mse':
+        return MSE()
     elif metric == 'confusion_matrix':
         return ConfusionMatrix()

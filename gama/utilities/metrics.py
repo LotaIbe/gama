@@ -16,6 +16,7 @@ regression_metrics = {
     "neg_mean_squared_log_error",
     "neg_median_absolute_error",
     "neg_mean_squared_error",
+    "neg_root_mean_squared_error"
 }
 
 all_metrics = {*classification_metrics, *regression_metrics}
@@ -33,14 +34,14 @@ class Metric:
     """ A thin layer around the `scorer` class of scikit-learn. """
 
     def __init__(self, scorer: Union[_BaseScorer, str]):
-        if isinstance(scorer, str):
-            scorer = get_scorer(scorer)
-        if not isinstance(scorer, _BaseScorer):
-            raise ValueError(
-                "Scorer was not a valid scorer or could not be converted to one."
-            )
-        self.scorer = scorer
-        self.name = reversed_scorers[scorer]
+        # if isinstance(scorer, str):
+        #     scorer = get_scorer(scorer)
+        # if not isinstance(scorer, _BaseScorer):
+        #     raise ValueError(
+        #         "Scorer was not a valid scorer or could not be converted to one."
+        #     )
+        self.scorer = get_scorer(scorer)
+        self.name = scorer
         self.requires_probabilities = (
             isinstance(scorer, _ProbaScorer) or self.name == "roc_auc"
         )
@@ -54,6 +55,7 @@ class Metric:
                 "Not sure which type of metric this is. Please raise an issue."
             )
 
+        
         self.score = self.scorer._score_func
 
     def __call__(self, *args, **kwargs):

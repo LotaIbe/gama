@@ -1,0 +1,101 @@
+Initial model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 24, 'max_features': 3, 'aggregation_method': 'median', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 69, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.06, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.2, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with RMSE: 0
+Test batch - 506 with RMSE: 0.015165
+Test batch - 529 with RMSE: 0.019055
+Test batch - 552 with RMSE: 0.01774
+Test batch - 575 with RMSE: 0.039301
+Test batch - 598 with RMSE: 0.063033
+Test batch - 621 with RMSE: 0.057777
+Test batch - 644 with RMSE: 0.060562
+Test batch - 667 with RMSE: 0.066797
+Test batch - 690 with RMSE: 0.062925
+Test batch - 713 with RMSE: 0.061808
+Test batch - 736 with RMSE: 0.064716
+Test batch - 759 with RMSE: 0.062536
+Test batch - 782 with RMSE: 0.060278
+Test batch - 805 with RMSE: 0.061447
+Test batch - 828 with RMSE: 0.059542
+Test batch - 851 with RMSE: 0.057665
+Test batch - 874 with RMSE: 0.056366
+Online model is updated with latest AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 17, 'max_features': 3, 'aggregation_method': 'mean', 'lambda_value': 4, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 82, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.039999999999999994, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 897 with RMSE: 0.058631
+Test batch - 920 with RMSE: 0.071752
+Test batch - 943 with RMSE: 0.073319
+Test batch - 966 with RMSE: 0.072077
+Test batch - 989 with RMSE: 0.070663
+Test batch - 1012 with RMSE: 0.069351
+Test batch - 1035 with RMSE: 0.067867
+Test batch - 1058 with RMSE: 0.066617
+Test batch - 1081 with RMSE: 0.094129
+Test batch - 1104 with RMSE: 0.133466
+Test batch - 1127 with RMSE: 0.134588
+Online model is updated with latest AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 19, 'max_features': 7, 'aggregation_method': 'mean', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 106, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.049999999999999996, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 1150 with RMSE: 0.134687
+Test batch - 1173 with RMSE: 0.146174
+Test batch - 1196 with RMSE: 0.145553
+Test batch - 1219 with RMSE: 0.152615
+Test batch - 1242 with RMSE: 0.150773
+Test batch - 1265 with RMSE: 0.148817
+Online model is kept at current AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 19, 'max_features': 7, 'aggregation_method': 'mean', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 106, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.049999999999999996, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 1288 with RMSE: 0.148743
+Test batch - 1311 with RMSE: 0.146979
+Test batch - 1334 with RMSE: 0.145395
+Test batch - 1357 with RMSE: 0.145086
+Test batch - 1380 with RMSE: 0.144914
+Test batch - 1403 with RMSE: 0.143293
+Online model is kept at current AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 19, 'max_features': 7, 'aggregation_method': 'mean', 'lambda_value': 8, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 106, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.049999999999999996, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 1426 with RMSE: 0.143608
+Test batch - 1449 with RMSE: 0.142107
+Test batch - 1472 with RMSE: 0.140843
+Test batch - 1495 with RMSE: 0.139498
+Test batch - 1518 with RMSE: 0.138193
+Test batch - 1541 with RMSE: 0.13741
+Test batch - 1564 with RMSE: 0.137036
+Test batch - 1587 with RMSE: 0.136281
+Test batch - 1610 with RMSE: 0.138639
+Test batch - 1633 with RMSE: 0.146021
+Test batch - 1656 with RMSE: 0.144908
+Test batch - 1679 with RMSE: 0.143556
+Test batch - 1702 with RMSE: 0.142784
+Test batch - 1725 with RMSE: 0.141634
+Test batch - 1748 with RMSE: 0.140504
+Test batch - 1771 with RMSE: 0.139361
+Test batch - 1794 with RMSE: 0.138655
+Test batch - 1817 with RMSE: 0.137714
+No drift but retraining point 1826 and current performance is at RMSE: 0.138459
+Online model is updated with latest AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 26, 'max_features': 3, 'aggregation_method': 'mean', 'lambda_value': 9, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 72, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.039999999999999994, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 1840 with RMSE: 0.138095
+Test batch - 1863 with RMSE: 0.138692
+Test batch - 1886 with RMSE: 0.138344
+Test batch - 1909 with RMSE: 0.137399
+Test batch - 1932 with RMSE: 0.136524
+Test batch - 1955 with RMSE: 0.13548
+Test batch - 1978 with RMSE: 0.135936
+Test batch - 2001 with RMSE: 0.144379
+Test batch - 2024 with RMSE: 0.144178
+Test batch - 2047 with RMSE: 0.144466
+Test batch - 2070 with RMSE: 0.143642
+Test batch - 2093 with RMSE: 0.142759
+Online model is kept at current AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 26, 'max_features': 3, 'aggregation_method': 'mean', 'lambda_value': 9, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 72, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.039999999999999994, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 2116 with RMSE: 0.141909
+Test batch - 2139 with RMSE: 0.14148
+Test batch - 2162 with RMSE: 0.14074
+Test batch - 2185 with RMSE: 0.140098
+Test batch - 2208 with RMSE: 0.139626
+Test batch - 2231 with RMSE: 0.139202
+Test batch - 2254 with RMSE: 0.140778
+Test batch - 2277 with RMSE: 0.141803
+Online model is kept at current AutoML pipeline.
+Current model is AdaptiveRandomForestRegressor and hyperparameters are: {'n_models': 26, 'max_features': 3, 'aggregation_method': 'mean', 'lambda_value': 9, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 72, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.039999999999999994, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}
+Test batch - 2300 with RMSE: 0.141576
+Test batch - 2323 with RMSE: 0.140839
+Test batch - 2346 with RMSE: 0.140203
+Test batch - 2369 with RMSE: 0.139423
+Test batch - 2392 with RMSE: 0.139918

@@ -1,0 +1,231 @@
+(oaml-dev) ➜  gama git:(oaml) ✗ python OAML_baseline.py 'data_streams/debutaniser.arff' 500 500 
+OAML_baseline.py
+Data stream is data_streams/debutaniser.arff.
+Initial batch size is 500.
+wandb: Tracking run with wandb version 0.9.7
+wandb: Wandb version 0.12.16 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Run data is saved locally in wandb/run-20220508_000201-12ukcg38
+wandb: Syncing run Regression Baseline
+wandb: ⭐️ View project at https://app.wandb.ai/lota/Results
+wandb: 🚀 View run at https://app.wandb.ai/lota/Results/runs/12ukcg38
+wandb: Run `wandb off` to turn off syncing.
+
+Data contains zero values. They are not removed but might cause issues with some River learners.
+Test batch - 506 with RMSE: 0.011499
+Test batch - 529 with RMSE: 0.015754
+Test batch - 552 with RMSE: 0.013975
+Test batch - 575 with RMSE: 0.032605
+Test batch - 598 with RMSE: 0.060887
+Test batch - 621 with RMSE: 0.056395
+Test batch - 644 with RMSE: 0.05734
+Test batch - 667 with RMSE: 0.059146
+Test batch - 690 with RMSE: 0.057442
+Test batch - 713 with RMSE: 0.056016
+Test batch - 736 with RMSE: 0.056203
+Test batch - 759 with RMSE: 0.055887
+Test batch - 782 with RMSE: 0.054497
+Test batch - 805 with RMSE: 0.056315
+Test batch - 828 with RMSE: 0.054732
+Test batch - 851 with RMSE: 0.053236
+Test batch - 874 with RMSE: 0.052213
+Test batch - 897 with RMSE: 0.054574
+Test batch - 920 with RMSE: 0.062226
+Test batch - 943 with RMSE: 0.061818
+Test batch - 966 with RMSE: 0.060625
+Test batch - 989 with RMSE: 0.063255
+Test batch - 1012 with RMSE: 0.062808
+Test batch - 1035 with RMSE: 0.061734
+Test batch - 1058 with RMSE: 0.060678
+Test batch - 1081 with RMSE: 0.086324
+Test batch - 1104 with RMSE: 0.113386
+Test batch - 1127 with RMSE: 0.118922
+Test batch - 1150 with RMSE: 0.117413
+Test batch - 1173 with RMSE: 0.116169
+Test batch - 1196 with RMSE: 0.115705
+Test batch - 1219 with RMSE: 0.114842
+Test batch - 1242 with RMSE: 0.113989
+Test batch - 1265 with RMSE: 0.112717
+Test batch - 1288 with RMSE: 0.114318
+Test batch - 1311 with RMSE: 0.113347
+Test batch - 1334 with RMSE: 0.112295
+Test batch - 1357 with RMSE: 0.112175
+Test batch - 1380 with RMSE: 0.115104
+Test batch - 1403 with RMSE: 0.114612
+Test batch - 1426 with RMSE: 0.113883
+Test batch - 1449 with RMSE: 0.113582
+Test batch - 1472 with RMSE: 0.113517
+Test batch - 1495 with RMSE: 0.112702
+Test batch - 1518 with RMSE: 0.111551
+Test batch - 1541 with RMSE: 0.110771
+Test batch - 1564 with RMSE: 0.111193
+Test batch - 1587 with RMSE: 0.110613
+Test batch - 1610 with RMSE: 0.112575
+Test batch - 1633 with RMSE: 0.114533
+Test batch - 1656 with RMSE: 0.118211
+Test batch - 1679 with RMSE: 0.117813
+Test batch - 1702 with RMSE: 0.117627
+Test batch - 1725 with RMSE: 0.116607
+Test batch - 1748 with RMSE: 0.115872
+Test batch - 1771 with RMSE: 0.114997
+Test batch - 1794 with RMSE: 0.115314
+Test batch - 1817 with RMSE: 0.114617
+Test batch - 1840 with RMSE: 0.115043
+Test batch - 1863 with RMSE: 0.115709
+Test batch - 1886 with RMSE: 0.115079
+Test batch - 1909 with RMSE: 0.114467
+Test batch - 1932 with RMSE: 0.113974
+Test batch - 1955 with RMSE: 0.113213
+Test batch - 1978 with RMSE: 0.11446
+Test batch - 2001 with RMSE: 0.120298
+Test batch - 2024 with RMSE: 0.121018
+Test batch - 2047 with RMSE: 0.120641
+Test batch - 2070 with RMSE: 0.120641
+Test batch - 2093 with RMSE: 0.119963
+Test batch - 2116 with RMSE: 0.119505
+Test batch - 2139 with RMSE: 0.119485
+Test batch - 2162 with RMSE: 0.119015
+Test batch - 2185 with RMSE: 0.119356
+Test batch - 2208 with RMSE: 0.119484
+Test batch - 2231 with RMSE: 0.119043
+Test batch - 2254 with RMSE: 0.121306
+Test batch - 2277 with RMSE: 0.122967
+Test batch - 2300 with RMSE: 0.123202
+Test batch - 2323 with RMSE: 0.12304
+Test batch - 2346 with RMSE: 0.122656
+Test batch - 2369 with RMSE: 0.122907
+Test batch - 2392 with RMSE: 0.123945
+
+wandb: Waiting for W&B process to finish, PID 61477
+wandb: Program ended successfully.
+wandb: Run summary:
+wandb:                _timestamp 1651964524.472824
+wandb:                     _step 82
+wandb:   Prequential performance 0.12394509089058296
+wandb:                  _runtime 3.8776612281799316
+wandb:             current_point 2392
+wandb: Syncing 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb:                                                                                
+wandb: Synced Regression Baseline: https://app.wandb.ai/lota/Results/runs/12ukcg38
+(oaml-dev) ➜  gama git:(oaml) ✗ python OAML_baseline.py 'data_streams/sulfur.arff' 500 500  
+OAML_baseline.py
+Data stream is data_streams/sulfur.arff.
+Initial batch size is 500.
+wandb: Tracking run with wandb version 0.9.7
+wandb: Wandb version 0.12.16 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Run data is saved locally in wandb/run-20220508_000354-26krfslw
+wandb: Syncing run Regression Baseline
+wandb: ⭐️ View project at https://app.wandb.ai/lota/Results
+wandb: 🚀 View run at https://app.wandb.ai/lota/Results/runs/26krfslw
+wandb: Run `wandb off` to turn off syncing.
+
+Data contains zero values. They are not removed but might cause issues with some River learners.
+Test batch - 600 with RMSE: 0.032326
+Test batch - 700 with RMSE: 0.027447
+Test batch - 800 with RMSE: 0.030357
+Test batch - 900 with RMSE: 0.027604
+Test batch - 1000 with RMSE: 0.026893
+Test batch - 1100 with RMSE: 0.025879
+Test batch - 1200 with RMSE: 0.024737
+Test batch - 1300 with RMSE: 0.025371
+Test batch - 1400 with RMSE: 0.027742
+Test batch - 1500 with RMSE: 0.030391
+Test batch - 1600 with RMSE: 0.032207
+Test batch - 1700 with RMSE: 0.035708
+Test batch - 1800 with RMSE: 0.035079
+Test batch - 1900 with RMSE: 0.036879
+Test batch - 2000 with RMSE: 0.041298
+Test batch - 2100 with RMSE: 0.041348
+Test batch - 2200 with RMSE: 0.040741
+Test batch - 2300 with RMSE: 0.040322
+Test batch - 2400 with RMSE: 0.040225
+Test batch - 2500 with RMSE: 0.040166
+Test batch - 2600 with RMSE: 0.040152
+Test batch - 2700 with RMSE: 0.03967
+Test batch - 2800 with RMSE: 0.039092
+Test batch - 2900 with RMSE: 0.042533
+Test batch - 3000 with RMSE: 0.043165
+Test batch - 3100 with RMSE: 0.043379
+Test batch - 3200 with RMSE: 0.04299
+Test batch - 3300 with RMSE: 0.042544
+Test batch - 3400 with RMSE: 0.04211
+Test batch - 3500 with RMSE: 0.041608
+Test batch - 3600 with RMSE: 0.041568
+Test batch - 3700 with RMSE: 0.041954
+Test batch - 3800 with RMSE: 0.042072
+Test batch - 3900 with RMSE: 0.041689
+Test batch - 4000 with RMSE: 0.041494
+Test batch - 4100 with RMSE: 0.041154
+Test batch - 4200 with RMSE: 0.040872
+Test batch - 4300 with RMSE: 0.040573
+Test batch - 4400 with RMSE: 0.040374
+Test batch - 4500 with RMSE: 0.040149
+Test batch - 4600 with RMSE: 0.0497
+Test batch - 4700 with RMSE: 0.050025
+Test batch - 4800 with RMSE: 0.050065
+Test batch - 4900 with RMSE: 0.04981
+Test batch - 5000 with RMSE: 0.049753
+Test batch - 5100 with RMSE: 0.049598
+Test batch - 5200 with RMSE: 0.049304
+Test batch - 5300 with RMSE: 0.049216
+Test batch - 5400 with RMSE: 0.048976
+Test batch - 5500 with RMSE: 0.048626
+Test batch - 5600 with RMSE: 0.048215
+Test batch - 5700 with RMSE: 0.048212
+Test batch - 5800 with RMSE: 0.047958
+Test batch - 5900 with RMSE: 0.047729
+Test batch - 6000 with RMSE: 0.047579
+Test batch - 6100 with RMSE: 0.047468
+Test batch - 6200 with RMSE: 0.047483
+Test batch - 6300 with RMSE: 0.047236
+Test batch - 6400 with RMSE: 0.046921
+Test batch - 6500 with RMSE: 0.046581
+Test batch - 6600 with RMSE: 0.046441
+Test batch - 6700 with RMSE: 0.04617
+Test batch - 6800 with RMSE: 0.046018
+Test batch - 6900 with RMSE: 0.045755
+Test batch - 7000 with RMSE: 0.0459
+Test batch - 7100 with RMSE: 0.04572
+Test batch - 7200 with RMSE: 0.045501
+Test batch - 7300 with RMSE: 0.045283
+Test batch - 7400 with RMSE: 0.045083
+Test batch - 7500 with RMSE: 0.044947
+Test batch - 7600 with RMSE: 0.044858
+Test batch - 7700 with RMSE: 0.044911
+Test batch - 7800 with RMSE: 0.04485
+Test batch - 7900 with RMSE: 0.044764
+Test batch - 8000 with RMSE: 0.044646
+Test batch - 8100 with RMSE: 0.044444
+Test batch - 8200 with RMSE: 0.04451
+Test batch - 8300 with RMSE: 0.04434
+Test batch - 8400 with RMSE: 0.044125
+Test batch - 8500 with RMSE: 0.044006
+Test batch - 8600 with RMSE: 0.044237
+Test batch - 8700 with RMSE: 0.044433
+Test batch - 8800 with RMSE: 0.044301
+Test batch - 8900 with RMSE: 0.044132
+Test batch - 9000 with RMSE: 0.044277
+Test batch - 9100 with RMSE: 0.044259
+Test batch - 9200 with RMSE: 0.044109
+Test batch - 9300 with RMSE: 0.043934
+Test batch - 9400 with RMSE: 0.043934
+Test batch - 9500 with RMSE: 0.044025
+Test batch - 9600 with RMSE: 0.043948
+Test batch - 9700 with RMSE: 0.044069
+Test batch - 9800 with RMSE: 0.044005
+Test batch - 9900 with RMSE: 0.044259
+Test batch - 10000 with RMSE: 0.044108
+
+wandb: Waiting for W&B process to finish, PID 61677
+wandb: Program ended successfully.
+wandb: Run summary:
+wandb:   Prequential performance 0.0441082422475452
+wandb:                     _step 94
+wandb:                  _runtime 8.532342910766602
+wandb:             current_point 10000
+wandb:                _timestamp 1651964643.1277308
+wandb: Syncing 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb:                                                                                
+wandb: Synced Regression Baseline: https://app.wandb.ai/lota/Results/runs/26krfslw
+(oaml-dev) ➜  gama git:(oaml) ✗ 

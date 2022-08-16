@@ -1,0 +1,362 @@
+(oaml-dev) ➜  gama git:(oaml) ✗ python OAML_DWM_ensemble.py 'data_streams/sulfur.arff' 500 500 rmse rmse 60 evol True 
+OAML_DWM_ensemble.py
+Data stream is data_streams/sulfur.arff.
+Initial batch size is 500.
+Sliding window size is 500.
+Gama performance metric is neg_root_mean_squared_error.
+Online performance metric is RMSE: 0..
+Time budget for GAMA is 60.
+Search algorithm for GAMA is AsyncEA().
+Live plotting (wandb) is True.
+wandb: Tracking run with wandb version 0.9.7
+wandb: Wandb version 0.12.16 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Run data is saved locally in wandb/run-20220507_230436-1t3naifp
+wandb: Syncing run Extended OAML - Ensemble (AddExp)
+wandb: ⭐️ View project at https://app.wandb.ai/lota/Results
+wandb: 🚀 View run at https://app.wandb.ai/lota/Results/runs/1t3naifp
+wandb: Run `wandb off` to turn off syncing.
+
+Data contains zero values. They are not removed but might cause issues with some River learners.
+Initial model is PreviousImputer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'AdaptiveRandomForestRegressor': {'n_models': 22, 'max_features': 6, 'aggregation_method': 'median', 'lambda_value': 5, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 60, 'max_depth': None, 'split_confidence': 0.0001, 'tie_threshold': 0.06, 'leaf_prediction': 'mean', 'leaf_model': None, 'model_selector_decay': 0.4, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Online model is updated with latest AutoML pipeline.
+Test batch - 0 with 0
+Test batch - 600 with RMSE: 0.017934
+Test batch - 700 with RMSE: 0.020784
+Test batch - 800 with RMSE: 0.023537
+Test batch - 900 with RMSE: 0.022621
+Test batch - 1000 with RMSE: 0.023536
+Test batch - 1100 with RMSE: 0.022228
+Test batch - 1200 with RMSE: 0.0211
+Test batch - 1300 with RMSE: 0.020242
+Test batch - 1400 with RMSE: 0.020267
+Test batch - 1500 with RMSE: 0.022641
+Test batch - 1600 with RMSE: 0.024487
+Test batch - 1700 with RMSE: 0.025635
+Test batch - 1800 with RMSE: 0.025265
+Test batch - 1900 with RMSE: 0.026493
+Test batch - 2000 with RMSE: 0.031852
+Test batch - 2100 with RMSE: 0.030929
+Test batch - 2200 with RMSE: 0.030732
+Test batch - 2300 with RMSE: 0.030506
+Test batch - 2400 with RMSE: 0.029995
+Test batch - 2500 with RMSE: 0.029644
+Test batch - 2600 with RMSE: 0.029303
+Test batch - 2700 with RMSE: 0.028749
+Test batch - 2800 with RMSE: 0.028355
+Test batch - 2900 with RMSE: 0.031263
+Test batch - 3000 with RMSE: 0.031774
+Batch Performance on Ensemble: RMSE: 0.026851
+Batch Performance on current model: RMSE: 0.045698
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=6
+    aggregation_method="median"
+    lambda_value=5
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=60
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.06
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=77
+    max_depth=inf
+    split_confidence=1e-07
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=5
+    bootstrap_sampling=True
+    drift_window_threshold=100
+    adwin_confidence=0.02
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 3100 with RMSE: 0.031405
+Test batch - 3200 with RMSE: 0.031116
+Test batch - 3300 with RMSE: 0.030665
+Test batch - 3400 with RMSE: 0.030368
+Test batch - 3500 with RMSE: 0.030013
+Test batch - 3600 with RMSE: 0.029896
+Test batch - 3700 with RMSE: 0.030105
+Test batch - 3800 with RMSE: 0.030101
+Test batch - 3900 with RMSE: 0.029877
+Test batch - 4000 with RMSE: 0.029549
+Test batch - 4100 with RMSE: 0.029387
+Test batch - 4200 with RMSE: 0.029185
+Test batch - 4300 with RMSE: 0.028926
+Test batch - 4400 with RMSE: 0.028915
+Test batch - 4500 with RMSE: 0.028709
+Test batch - 4600 with RMSE: 0.039047
+Test batch - 4700 with RMSE: 0.038898
+Test batch - 4800 with RMSE: 0.038912
+Test batch - 4900 with RMSE: 0.038843
+Test batch - 5000 with RMSE: 0.038595
+Test batch - 5100 with RMSE: 0.038345
+Test batch - 5200 with RMSE: 0.038062
+Test batch - 5300 with RMSE: 0.037863
+Test batch - 5400 with RMSE: 0.037623
+Test batch - 5500 with RMSE: 0.037354
+Test batch - 5600 with RMSE: 0.037074
+Test batch - 5700 with RMSE: 0.036995
+Test batch - 5800 with RMSE: 0.036814
+Test batch - 5900 with RMSE: 0.036573
+Test batch - 6000 with RMSE: 0.036466
+No drift but retraining point 6085 and current performance is at RMSE: 0.036467
+Batch Performance on Ensemble: RMSE: 0.022636
+Batch Performance on current model: RMSE: 0.015424
+Online model is updated with latest AutoML pipeline.
+Current model is PreviousImputer | AdaptiveRandomForestRegressor and hyperparameters are: {'PreviousImputer': {}, 'AdaptiveRandomForestRegressor': {'n_models': 37, 'max_features': 4, 'aggregation_method': 'median', 'lambda_value': 9, 'metric': (<class 'river.metrics.mse.MSE'>, {}), 'disable_weighted_vote': True, 'drift_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.001}), 'warning_detector': (<class 'river.drift.adwin.ADWIN'>, {'delta': 0.01}), 'grace_period': 68, 'max_depth': None, 'split_confidence': 0.1, 'tie_threshold': 0.02, 'leaf_prediction': 'adaptive', 'leaf_model': None, 'model_selector_decay': 0.7, 'nominal_attributes': None, 'splitter': None, 'min_samples_split': 5, 'binary_split': False, 'max_size': 500, 'memory_estimate_period': 2000000, 'stop_mem_management': False, 'remove_poor_attrs': False, 'merit_preprune': True, 'seed': None}}
+Test batch - 6100 with RMSE: 0.036423
+Test batch - 6200 with RMSE: 0.036416
+Test batch - 6300 with RMSE: 0.036152
+Test batch - 6400 with RMSE: 0.035869
+Test batch - 6500 with RMSE: 0.035585
+Test batch - 6600 with RMSE: 0.035361
+Test batch - 6700 with RMSE: 0.035119
+Test batch - 6800 with RMSE: 0.034949
+Test batch - 6900 with RMSE: 0.034705
+Test batch - 7000 with RMSE: 0.034746
+Test batch - 7100 with RMSE: 0.034545
+Test batch - 7200 with RMSE: 0.034352
+Test batch - 7300 with RMSE: 0.034111
+Test batch - 7400 with RMSE: 0.033901
+Test batch - 7500 with RMSE: 0.033747
+Test batch - 7600 with RMSE: 0.033694
+Test batch - 7700 with RMSE: 0.033676
+Test batch - 7800 with RMSE: 0.033494
+Test batch - 7900 with RMSE: 0.033558
+Test batch - 8000 with RMSE: 0.033388
+Test batch - 8100 with RMSE: 0.033216
+Test batch - 8200 with RMSE: 0.033092
+Test batch - 8300 with RMSE: 0.032915
+Test batch - 8400 with RMSE: 0.032771
+Test batch - 8500 with RMSE: 0.032599
+Test batch - 8600 with RMSE: 0.032576
+Test batch - 8700 with RMSE: 0.032566
+Test batch - 8800 with RMSE: 0.032409
+Test batch - 8900 with RMSE: 0.032241
+Test batch - 9000 with RMSE: 0.03215
+Test batch - 9100 with RMSE: 0.032037
+No drift but retraining point 9110 and current performance is at RMSE: 0.032021
+Batch Performance on Ensemble: RMSE: 0.038055
+Batch Performance on current model: RMSE: 0.045529
+Online model is updated with Backup Ensemble.
+Current model is AdaptiveVotingRegressor and hyperparameters are: {'models': [Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=22
+    max_features=6
+    aggregation_method="median"
+    lambda_value=5
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=60
+    max_depth=None
+    split_confidence=0.0001
+    tie_threshold=0.06
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  HoeffdingAdaptiveTreeRegressor (
+    grace_period=77
+    max_depth=inf
+    split_confidence=1e-07
+    tie_threshold=0.07
+    leaf_prediction="mean"
+    leaf_model=LinearRegression (
+      optimizer=SGD (
+        lr=Constant (
+          learning_rate=0.01
+        )
+      )
+      loss=Squared ()
+      l2=0.
+      intercept_init=0.
+      intercept_lr=Constant (
+        learning_rate=0.01
+      )
+      clip_gradient=1e+12
+      initializer=Zeros ()
+    )
+    model_selector_decay=0.2
+    nominal_attributes=None
+    splitter=EBSTSplitter ()
+    min_samples_split=5
+    bootstrap_sampling=True
+    drift_window_threshold=100
+    adwin_confidence=0.02
+    binary_split=False
+    max_size=100
+    memory_estimate_period=1000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  AdaptiveRandomForestRegressor (
+    n_models=37
+    max_features=4
+    aggregation_method="median"
+    lambda_value=9
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=68
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.02
+    leaf_prediction="adaptive"
+    leaf_model=None
+    model_selector_decay=0.7
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+), Pipeline (
+  PreviousImputer (),
+  MaxAbsScaler (),
+  RobustScaler (
+    with_centering=True
+    with_scaling=True
+    q_inf=0.25
+    q_sup=0.75
+  ),
+  AdaptiveRandomForestRegressor (
+    n_models=26
+    max_features=6
+    aggregation_method="mean"
+    lambda_value=6
+    metric=MSE ()
+    disable_weighted_vote=True
+    drift_detector=ADWIN (
+      delta=0.001
+    )
+    warning_detector=ADWIN (
+      delta=0.01
+    )
+    grace_period=171
+    max_depth=None
+    split_confidence=0.1
+    tie_threshold=0.03
+    leaf_prediction="mean"
+    leaf_model=None
+    model_selector_decay=0.4
+    nominal_attributes=None
+    splitter=None
+    min_samples_split=5
+    binary_split=False
+    max_size=500
+    memory_estimate_period=2000000
+    stop_mem_management=False
+    remove_poor_attrs=False
+    merit_preprune=True
+    seed=None
+  )
+)]}
+Test batch - 9200 with RMSE: 0.031932
+Test batch - 9300 with RMSE: 0.031824
+Test batch - 9400 with RMSE: 0.031888
+Test batch - 9500 with RMSE: 0.031958
+Test batch - 9600 with RMSE: 0.031947
+Test batch - 9700 with RMSE: 0.032025
+Test batch - 9800 with RMSE: 0.031973
+Test batch - 9900 with RMSE: 0.03204
+Test batch - 10000 with RMSE: 0.031883
+
+wandb: Waiting for W&B process to finish, PID 58569
+wandb: Program ended successfully.
+wandb: Run summary:
+wandb:                  _runtime 458.1257047653198
+wandb:                     _step 100
+wandb:   Prequential performance 0.03188278462950064
+wandb:             current_point 10000
+wandb:                _timestamp 1651961534.393417
+wandb:              model_update 2
+wandb:               drift_point 9110
+wandb: Syncing 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb:                                                                                
+wandb: Synced Extended OAML - Ensemble (AddExp): https://app.wandb.ai/lota/Results/runs/1t3naifp
+(oaml-dev) ➜  gama git:(oaml) ✗ 

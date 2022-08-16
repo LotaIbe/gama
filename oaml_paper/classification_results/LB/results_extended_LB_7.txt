@@ -1,0 +1,12 @@
+Test batch - 0 with Accuracy: 0
+Test batch - 5810 with Accuracy: 3.58%
+Test batch - 11620 with Accuracy: 20.51%
+Test batch - 17430 with Accuracy: 31.95%
+Test batch - 23240 with Accuracy: 52.17%
+Test batch - 29050 with Accuracy: 62.58%
+Test batch - 34860 with Accuracy: 68.76%
+Test batch - 40670 with Accuracy: 73.48%
+Test batch - 46480 with Accuracy: 76.85%
+Test batch - 52290 with Accuracy: 79.51%
+Test batch - 58100 with Accuracy: 81.25%
+Test batch - 63910 with Accuracy: 82.30%

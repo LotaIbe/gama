@@ -1,6 +1,7 @@
 from typing import List, Optional, Sequence, Tuple
 
 import pandas as pd
+from river.compose import Pipeline
 from river.base import Transformer
 
 from gama.genetic_programming.components import Individual
@@ -13,6 +14,7 @@ from gama.utilities.export import (
 )
 from river import compose
 
+
 class BestFitOnlinePostProcessing(BasePostProcessing):
     """ Post processing technique which trains the best found single pipeline. """
 
@@ -24,11 +26,23 @@ class BestFitOnlinePostProcessing(BasePostProcessing):
         self, x: pd.DataFrame, y: pd.Series, timeout: float, selection: List[Individual]
     ) -> object:
         self._selected_individual = selection[0]
-        model = self._selected_individual.pipeline
-        for i in range(0, len(x)):
-            model = model.learn_one(x.iloc[i].to_dict(), int(y[i]))
 
-        return model
+        # TO BE CHANGED
+        steps = list(self._selected_individual.pipeline.steps.values())
+        river_model = Pipeline()
+        for i, step in enumerate(steps):
+            if i == 0:
+                river_model = steps[i]
+            else:
+                river_model |= steps[i]
+
+        # final = next(iter(steps))
+        # river_model = compose.Pipeline(final)
+        for i in range(0, len(x)):
+            river_model.learn_one(x.iloc[i].to_dict(), y[i])
+
+        #self._selected_individual.pipeline = river_model
+        return river_model
 
     def to_code(
         self, preprocessing: Sequence[Tuple[str, Transformer]] = None

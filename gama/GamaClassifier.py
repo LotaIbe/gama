@@ -17,7 +17,7 @@ from gama.utilities.metrics import scoring_to_metric
 class GamaClassifier(Gama):
     """ Gama with adaptations for (multi-class) classification. """
 
-    def __init__(self, config=None, scoring="neg_log_loss", online_learning = False, *args, **kwargs) -> object:
+    def __init__(self, config=None, scoring="neg_log_loss", online_learning=False, *args, **kwargs) -> object:
         self._online_learning = online_learning
         if not config:
             # Do this to avoid the whole dictionary being included in the documentation.
@@ -42,7 +42,8 @@ class GamaClassifier(Gama):
             }
         """
         self._label_encoder = None
-        super().__init__(*args, **kwargs, config=config, scoring=scoring, online_learning=online_learning)
+        super().__init__(*args, **kwargs, config=config,
+                         scoring=scoring, online_scoring="accuracy", online_learning=online_learning)
 
     def _predict(self, x: pd.DataFrame):
         """ Predict the target for input X.
@@ -67,7 +68,7 @@ class GamaClassifier(Gama):
             for x_i in x:
                 y_pred.append(self.model.predict_one(x_i))
             y = np.array(y_pred) """
-            y = 999  #not implemented
+            y = 999  # not implemented
         # Decode the predicted labels - necessary only if ensemble is not used.
         return y
 
@@ -147,16 +148,6 @@ class GamaClassifier(Gama):
             y = self._label_encoder.transform(y_)
         self._evaluation_library.determine_sample_indices(stratify=y)
         super().fit(x, y, *args, **kwargs)
-
-    def partial_fit(self, x, y, *args, **kwargs):
-        """ Should use base class documentation. """
-        y_ = y.squeeze() if isinstance(y, pd.DataFrame) else y
-        self._label_encoder = LabelEncoder().fit(y_)
-        if any([isinstance(yi, str) for yi in y_]):
-            # If target values are `str` we encode them or scikit-learn will complain.
-            y = self._label_encoder.transform(y_)
-        self._evaluation_library.determine_sample_indices(stratify=y)
-        super().partial_fit(x, y, *args, **kwargs)
 
     def _encode_labels(self, y):
         self._label_encoder = LabelEncoder().fit(y)

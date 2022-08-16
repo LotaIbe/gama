@@ -1,8 +1,14 @@
 import logging
+import numbers
 from typing import Optional, Iterator, List, Tuple
+
+from sklearn import preprocessing
 import category_encoders as ce
 import pandas as pd
 from sklearn.base import TransformerMixin
+from river.preprocessing import PreviousImputer, OneHotEncoder, StatImputer
+from river.compose import Select, SelectType
+from river import stats
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 
@@ -85,11 +91,44 @@ def basic_pipeline_extension(
 
     return extension_steps
 
+
 def river_pipeline_extension(
     x: pd.DataFrame, is_classification: bool
-) -> List[Tuple[str]]:
+) -> List[Tuple[str, TransformerMixin]]:
+    """ Define a OneHotEncoder and Previous Imputer.
 
+    OneHotEncoder will encode categorical features. SimpleImputer imputes with the previously seen value.
+    """
+    # These steps need to be in the pipeline because they need to be trained each fold.
     extension_steps = []
-    #not implemented
+
+    categorical_cols = list(select_categorical_columns(x))
+    non_categorical = [column for column in x.columns if column not in categorical_cols]
+
+    # if categorical_cols:
+    #     for (i, col) in enumerate(categorical_cols):
+    #         if i == 0:
+    #             preprocessing_pipeline = Select(
+    #                 col) | OneHotEncoder()
+    #         else:
+    #             preprocessing_pipeline += Select(
+    #                 col) | OneHotEncoder()
+
+    #     for col in non_categorical:
+    #         preprocessing_pipeline += Select(col)
+
+    # num_col_selector = SelectType(numbers.Number)
+    # num_col_selector.learn_one(x.iloc[0].to_dict())
+    # num_cols = num_col_selector.transform_one(x.iloc[0].to_dict())
+
+    # num_p = [(col, stats.Mean()) for col in num_cols]
+    # categorical_preprocessing = SelectType(str) | PreviousImputer()
+    # numeric_preprocessing = StatImputer(*(num_p))
+    # # extension_steps.append(preprocessing_pipeline)
+
+    # river_preprocessing = numeric_preprocessing + categorical_preprocessing
+    # extension_steps.append(river_preprocessing)
+
+    extension_steps.append(PreviousImputer())
 
     return extension_steps
